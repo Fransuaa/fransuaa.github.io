@@ -1,0 +1,83 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex; /* Usa flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Asegura que ocupe al menos el 100% de la altura de la ventana */
+    background-color: #282c34; /* Un fondo oscuro para contrastar */
+    color: #61dafb; /* Color de texto vibrante */
+    font-family: 'Press Start 2P', cursive; /* Aplica la fuente 8-bit */
+    overflow: hidden; /* Evita barras de desplazamiento si el contenido es muy grande */
+}
+
+/* Contenedor principal para el mensaje y el corazón */
+.container {
+    text-align: center; /* Centra el texto dentro del contenedor */
+    display: flex; /* Usa flexbox para alinear el texto y el corazón */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espacio entre el texto y el corazón */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos para el wrapper del mensaje y el corazón para que estén en línea */
+.message-wrapper {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto y el corazón */
+    gap: 15px; /* Espacio entre el texto y el corazón */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los elementos cuando se envuelven */
+}
+
+/* Estilos para el texto "te quiero peti" */
+.message-text {
+    font-size: 2.5em; /* Tamaño de fuente grande */
+    text-shadow: 4px 4px #000; /* Sombra para dar un efecto de pixel */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+/* Estilos para la imagen del corazón de Minecraft */
+.minecraft-heart-image {
+    width: 64px; /* Ancho de la imagen */
+    height: 64px; /* Alto de la imagen */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+    animation: pulse 1.5s infinite alternate; /* Animación de latido */
+    image-rendering: pixelated; /* Mantiene el aspecto pixelado de la imagen */
+}
+
+/* Animación de latido para el corazón */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2); /* Ligeramente más grande para el efecto de latido */
+    }
+}
+
+/* Media queries para hacer el diseño responsivo en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .message-text {
+        font-size: 1.8em; /* Reduce el tamaño de la fuente */
+    }
+    .minecraft-heart-image {
+        width: 50px; /* Reduce el tamaño de la imagen */
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-text {
+        font-size: 1.2em; /* Reduce aún más el tamaño de la fuente */
+    }
+    .minecraft-heart-image {
+        width: 40px; /* Tamaño original del corazón */
+        height: 40px;
+    }
+    .message-wrapper {
+        flex-direction: column; /* Apila el texto y el corazón en pantallas muy pequeñas */
+    }
+}
