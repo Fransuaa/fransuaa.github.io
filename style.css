@@ -48,6 +48,14 @@ body {
     image-rendering: pixelated; /* Mantiene el aspecto pixelado de la imagen */
 }
 
+/* Estilos para la nueva leyenda "proximamente mas cambios... " */
+.subtitle-text {
+    font-size: 0.8em; /* Más pequeño que el texto principal */
+    color: #ffffff; /* Color blanco */
+    text-shadow: 2px 2px #000; /* Sombra para el efecto pixelado */
+    margin-top: 100px; /* Ajusta el margen superior para acercarlo al texto principal si es necesario */
+}
+
 /* Animación de latido para el corazón */
 @keyframes pulse {
     0% {
@@ -67,6 +75,9 @@ body {
         width: 50px; /* Reduce el tamaño de la imagen */
         height: 50px;
     }
+    .subtitle-text {
+        font-size: 0.7em; /* Reduce el tamaño del subtítulo */
+    }
 }
 
 @media (max-width: 480px) {
@@ -79,5 +90,8 @@ body {
     }
     .message-wrapper {
         flex-direction: column; /* Apila el texto y el corazón en pantallas muy pequeñas */
+    }
+    .subtitle-text {
+        font-size: 0.6em; /* Reduce aún más el tamaño del subtítulo */
     }
 }
